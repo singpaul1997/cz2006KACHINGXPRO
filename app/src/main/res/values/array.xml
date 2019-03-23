@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listofcurrency">
+        <item>Singapore Dollar</item>
+        <item>US Dollar</item>
+        <item>Malaysian Ringgit</item>
+        <item>Australian Dollar</item>
+        <item>Euro</item>
+        <item>British Pound</item>
+    </string-array>
+</resources>
