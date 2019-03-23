@@ -7,21 +7,14 @@ public class rate {
     // Currency_4 = Australian Dollar
     // Currency_5 = Euro
     // Currency_6 = British Pound
-    double Currency_1 = -1;
-    double Currency_2 = -1;
-    double Currency_3 = -1;
-    double Currency_4 = -1;
-    double Currency_5 = -1;
-    double Currency_6 = -1;
+    public String[] rates;
 
     public rate(String rateStr) {
-        String[] rates = rateStr.split(",");
-        Currency_1 = Double.parseDouble(rates[0]);
-        Currency_2 = Double.parseDouble(rates[1]);
-        Currency_3 = Double.parseDouble(rates[2]);
-        Currency_4 = Double.parseDouble(rates[3]);
-        Currency_5 = Double.parseDouble(rates[4]);
-        Currency_6 = Double.parseDouble(rates[5]);
+        rates = rateStr.split(",");
+    }
+
+    public String[] getRates(){
+        return rates;
     }
 
     public double calculateRate(double base_currency, double target_currency, double value) {

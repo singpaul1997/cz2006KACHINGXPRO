@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.support.v7.app.AlertDialog;
 
 public class DBHandler extends SQLiteOpenHelper {
     //DB info
@@ -22,7 +23,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "(" + COLUMN_CODE + "INTEGER PRIMARYKEY," + COLUMN_NAME + "TEXT," + COLUMN_ADDRESS + "TEXT," + COLUMN_RATE + "TEXT," + COLUMN_CONTACT + "TEXT)";
+        String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME + "(" + COLUMN_CODE + " INTEGER PRIMARY KEY, " + COLUMN_NAME + " TEXT, " + COLUMN_ADDRESS + " TEXT, " + COLUMN_RATE + " TEXT, " + COLUMN_CONTACT + " TEXT)";
         db.execSQL(CREATE_TABLE);
     }
 
@@ -42,7 +43,7 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     public CurrencyExchange findcolumn(int exchange_code) {
-        String query = "Select * FROM" + TABLE_NAME + "WHERE" + COLUMN_NAME + " = " + "'" + String.valueOf(exchange_code) + "'";
+        String query = "Select * FROM " + TABLE_NAME + " WHERE " + COLUMN_CODE + " = " + String.valueOf(exchange_code);
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         CurrencyExchange Exchange = new CurrencyExchange();
@@ -62,7 +63,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
     public boolean deletecol(int exchange_code) {
         boolean result = false;
-        String query = "Select * FROM" + TABLE_NAME + "WHERE" + COLUMN_CODE + " = " + "'" + String.valueOf(exchange_code) + "'";
+        String query = "Select * FROM " + TABLE_NAME + " WHERE " + COLUMN_CODE + " = " + String.valueOf(exchange_code);
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         if (cursor.moveToFirst()){

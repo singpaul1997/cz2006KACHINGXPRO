@@ -21,7 +21,5 @@ public class CurrencyExchange {
     public void setrate(String rate){
         exchange_rate = rate;
     }
-    public void setcontact(String contact){
-        exchange_contact = contact;
-    }
+    public void setcontact(String contact){ exchange_contact = contact; }
 }
