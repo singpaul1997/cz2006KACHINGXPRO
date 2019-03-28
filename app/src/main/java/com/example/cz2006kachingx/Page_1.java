@@ -48,7 +48,7 @@ public class Page_1 extends AppCompatActivity {
 
     public void showFragment (Fragment fragment) {
         manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.content, fragment).commit();
+        manager.beginTransaction().replace(R.id.content, fragment).addToBackStack(null).commit();
     }
 
     @Override

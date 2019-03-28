@@ -8,4 +8,8 @@
         <item>Euro</item>
         <item>British Pound</item>
     </string-array>
+
+    <string-array name="spinnerswitch">
+        <item>Test</item>
+    </string-array>
 </resources>
